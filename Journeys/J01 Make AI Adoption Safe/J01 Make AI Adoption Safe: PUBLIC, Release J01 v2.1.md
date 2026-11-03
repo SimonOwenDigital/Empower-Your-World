@@ -1,3 +1,11 @@
+J01 Make AI Adoption Safe: PUBLIC, Release J01 v2.1.1
+
+Release 2.1.1 (3 November 2026) changes one file: the first page of Start Here. It now says what J01 is, explains the first and last stages, removes two repeated lines, and shows where the Risk Spine model and Module Cards fit. Everything else is as in release 2.1 below.
+
+SHA-256: e6ddec0f9305fe229a149245fa09b16aeaf724c95de99f5143db85d9f8815ec7
+
+---
+
 J01 Make AI Adoption Safe: PUBLIC, Release J01 v2.1
 
 J01 sets out to make the enormous problem of AI adoption small enough to work through and test.
@@ -13,4 +21,4 @@ a new card: How to tell whether oversight is working;
 updated L0 Journey Check and Where to Go Next.
 The six-stage Risk Spine is unchanged. Release 2 (27 October 2026) remains available in this repository's history.
 
-SHA-256: 82a3cbb169345af7787c41c9523f4c059b43d5d65cf8f2e244457404dcafd253
+SHA-256 of the release 2.1 zip: 82a3cbb169345af7787c41c9523f4c059b43d5d65cf8f2e244457404dcafd253

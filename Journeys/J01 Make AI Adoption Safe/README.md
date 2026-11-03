@@ -2,7 +2,7 @@
 
 The free PUBLIC Knowledge Layer of the EmPOWER Your World Journey J01.
 
-**Download:** `J01_PUBLIC_Make_AI_Adoption_Safe.zip` (release 2.1, 01 November 2026)
+**Download:** `J01_PUBLIC_Make_AI_Adoption_Safe.zip` (release 2.1.1, 3 November 2026)
 
 ## What is inside
 
@@ -13,11 +13,11 @@ The free PUBLIC Knowledge Layer of the EmPOWER Your World Journey J01.
 | `02_Journey_Deck` | Public Journey Deck (58 pages) |
 | `03_Summary` | Two-page summary |
 | `04_Risk_Spine_Model` | The Risk Spine on one page |
-| `05_Module_Cards` | Oversight Slide - One card per stage|
+| `05_Module_Cards` | One card per stage, and the card "How to tell whether oversight is working" |
 | `06_L0_Journey_Check` | A private reflection you can write in |
 | `07_Where_to_Go_Next` | Five neutral routes onward |
 | `08_Module_Knowledge` | The six module decks behind the stages, knowledge slides only |
-| `09_Module_Reference` | Public Summary - Law and standards behind the stages, in plain language |
+| `09_Module_Reference` | Law and standards behind the stages, in plain language |
 
 ## Use
 
@@ -28,6 +28,6 @@ You may keep, present and share these materials unmodified, with attribution to 
 ## Integrity
 
 SHA-256 of `J01_PUBLIC_Make_AI_Adoption_Safe.zip`:
-`82a3cbb169345af7787c41c9523f4c059b43d5d65cf8f2e244457404dcafd253`
+`e6ddec0f9305fe229a149245fa09b16aeaf724c95de99f5143db85d9f8815ec7`
 
-Release 2 replaces release 1 (29 September 2026), which remains in this repository's history.
+Release 2.1.1 (3 November 2026) replaces release 2.1 (1 November 2026). Earlier releases remain in this repository's history.
