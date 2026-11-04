@@ -1,3 +1,11 @@
+J01 Make AI Adoption Safe: PUBLIC, Release J01 v2.1.2
+
+Release 2.1.2 (4 November 2026) changes nothing in the PUBLIC pack. It made the SELF and Workshop packs print properly on A4. The PUBLIC download, and its SHA-256, are the same as in release 2.1.1 below. J01 release 2.2, on the same day, added an after-the-workshop layer for Workshop participants; PUBLIC is unchanged there too.
+
+SHA-256: e6ddec0f9305fe229a149245fa09b16aeaf724c95de99f5143db85d9f8815ec7
+
+---
+
 J01 Make AI Adoption Safe: PUBLIC, Release J01 v2.1.1
 
 Release 2.1.1 (3 November 2026) changes one file: the first page of Start Here. It now says what J01 is, explains the first and last stages, removes two repeated lines, and shows where the Risk Spine model and Module Cards fit. Everything else is as in release 2.1 below.

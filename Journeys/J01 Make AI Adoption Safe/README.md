@@ -16,8 +16,8 @@ The free, public layer of the J01 Journey: six questions that sit between an AI 
 ### Changes in v2.1.1
 Start Here page 1 is clearer about where to begin and in what order. Nothing else changed from v2.1.
 
-### J01 release v2.1.2 (4 November 2026)
-J01 has since moved to release v2.1.2. That release changed only the SELF and Workshop packs, which now print properly on A4. The PUBLIC pack is unchanged, so this download is still current.
+### J01 releases v2.1.2 and v2.2 (4 November 2026)
+J01 has since moved to release v2.2. Release v2.1.2 changed only the SELF and Workshop packs, which now print properly on A4. Release v2.2 added an after-the-workshop layer for Workshop participants. The PUBLIC pack is unchanged in both, so this download is still current.
 
 ### Using it
 Free to learn from: share it unmodified, with attribution to Simon Owen / EmPOWER Your World. Delivering it as a service needs a licence. This is learning material, not legal, regulatory or assurance advice; examples use Wyreld Co., a synthetic company.
