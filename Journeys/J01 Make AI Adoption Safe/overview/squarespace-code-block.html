@@ -1,0 +1,328 @@
+<!-- J01 Make AI Adoption Safe: PUBLIC overview v1.0 · EmPOWER Your World
+     Paste this whole block into a Squarespace Code Block (HTML mode).
+     If your site header stays fixed at the top while scrolling, set --j01o-top below to its height (for example 80px)
+     so the section bar sits underneath it. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+#j01o{--navy:#1F2A44;--teal:#1F5F5B;--ink:#1B2333;--muted:#3A4558;--soft:#5A6577;--line:#DDE2EA;--paper:#F6F7F9;--gold:#F2C14E;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;-webkit-text-size-adjust:100%;text-align:left}
+#j01o *,#j01o *::before,#j01o *::after{box-sizing:border-box}
+#j01o h1,#j01o h2,#j01o p{margin:0;font-family:inherit;letter-spacing:normal;text-transform:none}
+#j01o a{color:var(--teal)}
+#j01o button{font:inherit;margin:0}
+#j01o button:focus-visible,#j01o a:focus-visible{outline:3px solid #B5651D;outline-offset:2px}
+#j01o section[id]{scroll-margin-top:calc(var(--j01o-top) + 64px)}
+#j01o .w{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+#j01o .k{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+#j01o .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent}
+#j01o .btn.solid{background:var(--teal);color:#fff}
+#j01o .btn.line{border-color:var(--navy);color:var(--navy);background:transparent}
+#j01o .strip{background:var(--navy);color:#fff}
+#j01o .strip .w{padding-top:12px;padding-bottom:12px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+#j01o header.w{padding-top:56px;padding-bottom:32px;display:flex;flex-direction:column;gap:18px}
+#j01o h1{font-size:50px;line-height:1.08;font-weight:800;letter-spacing:-.02em;color:var(--navy);max-width:900px}
+#j01o .lede{font-size:19px;color:var(--muted);max-width:780px}
+#j01o .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+#j01o .map{margin-top:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+#j01o .tile{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:14px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink)}
+#j01o .tile:hover{border-color:var(--navy)}
+#j01o .tn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;font-weight:800;font-size:16px;color:#fff}
+#j01o .tile b{display:block;font-size:17px;color:var(--navy)}
+#j01o .tile span.s{display:block;font-size:14px;line-height:1.4;color:var(--muted);margin-top:4px}
+#j01o .tile span.t{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);margin-top:4px}
+#j01o .nav{position:sticky;top:var(--j01o-top);z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+#j01o .nav .w{padding-top:6px;padding-bottom:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+#j01o .nav a.n{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;background:#F0F2F6;color:var(--navy)}
+#j01o .nav a.n[aria-current="location"]{background:var(--navy);color:#fff}
+#j01o .nav a.dl{margin-left:auto;display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:8px;background:var(--teal);color:#fff;font-weight:700;font-size:14px;text-decoration:none}
+#j01o .dark{background:var(--navy);color:#fff}
+#j01o .dark .w{padding-top:48px;padding-bottom:48px;display:flex;flex-direction:column;gap:20px}
+#j01o .hd{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-end}
+#j01o h2{font-size:32px;line-height:1.15;font-weight:800}
+#j01o .stations{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:10px}
+#j01o .st{display:flex;flex-direction:column;gap:10px;padding:14px 12px;border-radius:14px;background:#2A3756;border:2px solid #3A4A6E}
+#j01o .st.on{border-color:#fff}
+#j01o .st.weak:not(.on){border-color:var(--gold)}
+#j01o .pick{display:flex;flex-direction:column;gap:8px;align-items:flex-start;padding:0;border:0;background:transparent;color:#fff;text-align:left;cursor:pointer;min-height:120px;width:100%}
+#j01o .badge{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:24px;border-radius:6px;font-weight:800;font-size:12px;color:#fff}
+#j01o .st.on .badge{background:#fff!important}
+#j01o .pick .nm{font-size:16px;font-weight:700}
+#j01o .pick .q{font-size:13px;line-height:1.4;opacity:.92}
+#j01o .tag{margin-top:auto;font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.14)}
+#j01o .rate{display:flex;gap:4px}
+#j01o .rate button{flex:1 1 0;min-width:0;min-height:36px;padding:0 4px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+#j01o .rate button[aria-pressed="true"]{background:#fff;color:var(--navy);border-color:#fff}
+#j01o .wk{font-size:12px;font-weight:800;padding:3px 8px;border-radius:6px;background:var(--gold);color:var(--navy);align-self:flex-start}
+#j01o .ghost{min-height:40px;padding:0 16px;border-radius:10px;border:2px solid #CBD3E1;background:transparent;color:#fff;font-size:14px;font-weight:700;cursor:pointer}
+#j01o .weakmsg{background:var(--gold);color:var(--navy);border-radius:12px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+#j01o .weakmsg button{min-height:44px;padding:0 18px;border-radius:10px;border:0;background:var(--navy);color:#fff;font-weight:800;cursor:pointer}
+#j01o .panel{background:#fff;color:var(--ink);border-radius:16px;padding:24px;display:flex;flex-wrap:wrap;gap:24px}
+#j01o .pl{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:12px}
+#j01o .pr{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:12px}
+#j01o .tabs button{min-height:40px;padding:0 16px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;background:#fff;color:var(--navy);border:2px solid #C7CEDA}
+#j01o .tabs button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+#j01o .shot{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;line-height:0}
+#j01o .shot img{width:100%;height:auto;display:block;aspect-ratio:16/9;background:#E9EDF3}
+#j01o .cap{font-size:13px;color:var(--soft)}
+#j01o .big{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;font-weight:800;font-size:19px;color:#fff;flex:none}
+#j01o .story{background:var(--paper);border-radius:10px;padding:12px 14px}
+#j01o .light .w{display:flex;flex-direction:column;gap:18px}
+#j01o .opts button{min-height:40px;padding:0 12px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;background:#fff;color:var(--navy);border:2px solid #C7CEDA}
+#j01o .opts button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+#j01o .gain{background:#E6F0EF;border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;gap:8px}
+#j01o .items{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+#j01o .item{background:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;border:1px solid var(--line)}
+#j01o .item.rec{border:2px solid var(--gold)}
+#j01o .outline{min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--navy);background:#fff;color:var(--navy);font-size:15px;font-weight:700;cursor:pointer}
+#j01o .cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+#j01o .c3{border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px}
+#j01o .c3 .btn{margin-top:auto}
+#j01o .c3 .h{font-size:21px;line-height:1.25;font-weight:800}
+#j01o .mcta{display:none;position:sticky;bottom:0;background:var(--navy);padding:10px 16px;gap:10px;justify-content:center;z-index:5}
+#j01o .mcta a{min-height:44px;font-size:15px;padding:0 16px}
+#j01o footer .w{padding-top:24px;padding-bottom:24px;font-size:13px;color:var(--soft);border-top:1px solid var(--line)}
+@media (max-width:720px){
+  #j01o h1{font-size:34px}
+  #j01o h2{font-size:26px}
+  #j01o .lede{font-size:17px}
+  #j01o .w{padding-left:16px;padding-right:16px}
+  #j01o .mcta{display:flex}
+  #j01o .nav a.dl{display:none}
+  #j01o .panel{padding:16px}
+  #j01o .pick{min-height:0}
+  #j01o .tag{margin-top:4px}
+  #j01o .mcta a{flex:1 1 0;padding:0 8px;font-size:14px;white-space:nowrap}
+}
+</style>
+
+<div id="j01o" style="--j01o-top:0px">
+<div class="strip"><div class="w"><span>EmPOWER Your World · Journey J01</span><span style="color:#CFE3E1">Free · no registration needed to download</span></div></div>
+
+<header class="w">
+<div class="k" style="color:var(--teal)">J01 Make AI Adoption Safe · the PUBLIC pack</div>
+<h1>Six questions that make AI adoption small enough to work through.</h1>
+<p class="lede">AI tools are in use in more places than anyone can list, and teams decide about similar work in different ways. The Risk Spine gives every AI idea the same six questions, in the same order, so decisions can be compared, owned and shown, whether you are a 50-person firm or a large enterprise.</p>
+<div class="row">
+<a class="btn solid" data-l="zip" href="#">Download the free pack (zip)</a>
+<a class="btn line" data-l="journey" href="#">See the Journey page</a>
+<span style="font-size:14px;color:var(--muted)">By Simon Owen, Microsoft MVP. Piloted in October 2026: early signals, not proof.</span>
+</div>
+<nav class="map" aria-label="On this page" data-r="tiles"></nav>
+</header>
+
+<div class="nav"><nav class="w" aria-label="Sections" data-r="navlinks"></nav></div>
+
+<section id="j01o-s1" class="dark" aria-labelledby="j01o-h1">
+<div class="w">
+<div class="hd">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div class="k" style="color:#9FC9C5">1 · The Risk Spine</div>
+<h2 id="j01o-h1">Look inside each question, and rate your own organisation.</h2>
+</div>
+<p style="font-size:15px;color:#CBD3E1;max-width:440px">Follow one invented use case, Wyreld Co.'s CatalogueAgent, through all six. Under each question, say how sure you are your organisation could answer it today. Nothing is stored or sent: it's a prompt for reflection, not an assessment.</p>
+</div>
+<div class="stations" data-r="stations"></div>
+<div class="row" style="justify-content:space-between">
+<span style="font-size:14px;color:#CBD3E1" data-r="answered"></span>
+<button type="button" class="ghost" data-a="reset">Start again from blank</button>
+</div>
+<div data-r="weakmsg"></div>
+<div class="panel">
+<div class="pl">
+<div class="tabs row" role="group" aria-label="What to show" style="gap:8px">
+<button type="button" data-a="idea">The idea</button>
+<button type="button" data-a="worked">Worked example: CatalogueAgent</button>
+</div>
+<a class="shot" data-r="shotlink" href="#" target="_blank" rel="noopener"><img data-r="shot" src="" alt="" loading="lazy" width="1280" height="720"></a>
+<div class="cap" data-r="cap"></div>
+</div>
+<div class="pr" data-r="detail"></div>
+</div>
+<p style="font-size:13px;color:#CBD3E1">Wyreld Co. and CatalogueAgent are synthetic. The examples claim no observed outcome.</p>
+</div>
+</section>
+
+<section id="j01o-s2" class="light" aria-labelledby="j01o-h2">
+<div class="w" style="padding-top:48px;padding-bottom:16px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div class="k" style="color:var(--teal)">2 · The free pack</div>
+<h2 id="j01o-h2" style="font-size:30px;color:var(--navy)">What's in it for you?</h2>
+<p style="font-size:16px;color:var(--muted)">Choose who you are and we'll show you where to start.</p>
+</div>
+<div class="opts row" role="group" aria-label="Who are you?" style="gap:8px" data-r="aud"></div>
+<div data-r="gain"></div>
+<div class="items" data-r="items"></div>
+<div class="row" style="gap:12px 20px">
+<button type="button" class="outline" data-a="all" aria-expanded="false">Show all ten items</button>
+<p style="font-size:14px;color:var(--soft);flex:1 1 420px;min-width:0">Not included: facilitator guides, scored diagnostics, working canvases, the control catalogue, assessment, delivery rights or benchmark data. Understanding comes first; applying it is the next step.</p>
+</div>
+</div>
+</section>
+
+<section id="j01o-s3" class="light" aria-labelledby="j01o-h3">
+<div class="w" style="padding-top:40px;padding-bottom:64px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<div class="k" style="color:var(--teal)">3 · Where next</div>
+<h2 id="j01o-h3" style="font-size:30px;color:var(--navy)">Take the next step</h2>
+</div>
+<div class="cards3">
+<div class="c3" style="background:var(--teal);color:#fff">
+<div class="k" style="font-size:12px;color:#CFE3E1">Free, no sign-up</div>
+<div class="h">Download the pack</div>
+<p style="font-size:15px;color:#E6F0EF">Everything on this page and more, in one zip.</p>
+<a class="btn" data-l="zip" href="#" style="background:#fff;color:var(--teal)">Download the free pack</a>
+</div>
+<div class="c3" style="background:#fff;border:2px solid var(--teal)">
+<div class="k" style="font-size:12px;color:var(--teal)">Register free</div>
+<div class="h" style="color:var(--navy)">Build your own capability profile</div>
+<p style="font-size:15px;color:var(--muted)">Goes further than the weakest-link check: the L1 Capability Profile, with guides, an output template and a completed Wyreld example. You can challenge and correct the result.</p>
+<a class="btn solid" data-l="register" href="#">Register for J01</a>
+</div>
+<div class="c3" style="background:#fff;border:2px solid #4A5A9A">
+<div class="k" style="font-size:12px;color:#4A5A9A">Help shape what's next</div>
+<div class="h" style="color:var(--navy)">Try J01 with your team</div>
+<p style="font-size:15px;color:var(--muted)">Workshops, practice, or testing it in your organisation or with your customers. Tell us what you'd want to try.</p>
+<a class="btn" data-l="form" href="#" style="background:#4A5A9A;color:#fff">Register your interest</a>
+</div>
+</div>
+<p style="font-size:15px;color:var(--muted)">Every route, from learning more to building capability in your organisation (or "not yet"), is on the <a data-l="journey" href="#" style="font-weight:700">J01 Journey page</a>.</p>
+</div>
+</section>
+
+<div class="mcta"><a class="btn" data-l="zip" href="#" style="background:#fff;color:var(--navy)">Download the pack</a><a class="btn" data-l="form" href="#" style="border-color:#fff;color:#fff">Register interest</a></div>
+<footer><div class="w">© 2026 Simon Owen / EmPOWER Your World. A learning resource: not a diagnostic, an assessment or legal, regulatory or professional advice. Wyreld Co. is synthetic. Contact: Simon@EmpowerYour.World · Overview v1.0</div></footer>
+</div>
+
+<script>
+(function(){
+  var root = document.getElementById('j01o'); if (!root || root.getAttribute('data-ready')) return; root.setAttribute('data-ready','1');
+  var IMG = 'https://cdn.jsdelivr.net/gh/SimonOwenDigital/Empower-Your-World@j01-overview-v1.0/Journeys/J01%20Make%20AI%20Adoption%20Safe/overview/img/';
+  var UTM = 'utm_source=j01-overview&utm_medium=web&utm_campaign=j01-public';
+  var BASE = 'https://www.empoweryour.world/journeys/make-ai-adoption-safe';
+  var LINKS = {
+    journey: BASE + '?' + UTM,
+    register: BASE + '?' + UTM + '&utm_content=register#register',
+    zip: 'https://downloads.empoweryour.world/Journeys/J01%20Make%20AI%20Adoption%20Safe/J01_PUBLIC_Make_AI_Adoption_Safe.zip',
+    form: 'https://forms.cloud.microsoft/e/H4yc693d4d'
+  };
+  var COL = ['#2E7D7A','#3C7A9A','#4A5A9A','#5B5BA8','#7A5BA8','#B5651D'];
+  var S = [
+    { num:'01', name:'Front Door', mod:'M15', card:'C15', module:'M15 Use-case Intake and Gates', q:'Should this use case exist in the portfolio at all?', tag:'Pass', img:'fd',
+      belief:'The front door is the cheapest place to make the decision. Every idea gets one of three outcomes, Pass, Redirect or Refuse, before anyone builds anything.',
+      thread:'Pass. It answers installers’ and staff questions on panels, prices and stock, and it cannot act. Risk Size will find it L.',
+      ideaAlt:'Slide: Pass, Redirect or Refuse, and a reason every time: what each outcome means and what happens next.', workedAlt:'Slide: What the Front Door recorded, and what Risk Size found next, for three Wyreld use cases.' },
+    { num:'02', name:'Risk Size', mod:'M10', card:'C10', module:'M10 AI Risk Sizing', q:'How large is the risk?', tag:'Tier L', img:'rs',
+      belief:'Size the risk before you choose the controls. One shared scale, S to XL, lets teams compare like with like: pattern, not sum.',
+      thread:'Tier L, Elevated. Installers and merchants talk to it directly, so Reach is the axis that carries the risk and sets the floor.',
+      ideaAlt:'Slide: Map the rating to a tier. Minimal, Standard, Elevated and High, with the Annex III override.', workedAlt:'Slide: Walking Wyreld’s CatalogueAgent through the model, with a radar of four axes and tier L.' },
+    { num:'03', name:'Control Floor', mod:'M11', card:'C11', module:'M11 AI Risk Controls', q:'Which controls does that size require, and who owns them?', tag:'25 of 40', img:'cf',
+      belief:'Controls must be operable, not just documented. The size sets the floor, and every control has an owner and a record that shows it ran.',
+      thread:'25 of 40 controls: Reach, injection defence, tier L and GPAI light up. It rises to 28 when the agent starts to act.',
+      ideaAlt:'Slide: Four layers make one control floor: baseline, axis modifier, tier delta and flag overlay.', workedAlt:'Slide: One company, three use cases, three floors: 10, 25 and 30 of 40 controls.' },
+    { num:'04', name:'Living Loop', mod:'M12', card:'C12', module:'M12 Living Governance', q:'What changed, and who owns the decision?', tag:'Still L', img:'ll',
+      belief:'Governance continues after launch. A change in the model, the supplier or the use reopens the decision it affects.',
+      thread:'The provider changes the model under the same name. Re-sized: still L. Tests are re-run and review sampling goes from weekly to daily for two weeks.',
+      ideaAlt:'Slide: Sense, decide, act, and leave a trace.', workedAlt:'Slide: A provider changes the model under the same name: sense, triage, decide, act, trace.' },
+    { num:'05', name:'Evidence Chain', mod:'M13', card:'C13', module:'M13 AI Evidence and Audit-Readiness', q:'Could past activity be reconstructed on demand?', tag:'7 records', img:'ec',
+      belief:'Evidence is designed in from the start, not pieced together when someone asks.',
+      thread:'“Show me how you knew the model changed, what you decided, and that the controls still ran.” Seven linked records answer it.',
+      ideaAlt:'Slide: Four streams, one key, six custody stages: decisions, controls, signals and outcomes.', workedAlt:'Slide: The provider changed the model. Show the chain: seven records from gate to control proof.' },
+    { num:'06', name:'Response Net', mod:'M14', card:'C14', module:'M14 Incident and Surprise Response', q:'Who acts first when no runbook fits?', tag:'Sev 2', img:'rn',
+      belief:'Incidents need declared decision and response routes before the surprise arrives.',
+      thread:'Two days later it tells installers it has “reserved” panels it cannot reserve. A surprise, Sev 2: the business owner pauses installer-facing use; staff use stays live.',
+      ideaAlt:'Slide: Name the first-decision owner before you need one: named beforehand versus found in the moment.', workedAlt:'Slide: It started promising stock it cannot reserve: class, first decision, evidence, cause.' }
+  ];
+  var A = [
+    { label:'A leader or sponsor', short:'a leader', gain:'Every team’s AI decisions become comparable, and you know who owns the first one. You can brief your peers without hiring anyone to explain it.', start:'the two-page Summary, then the one-page Risk Spine, then the Journey Deck if you want to present it.', recs:['sum','spine','deck'] },
+    { label:'In risk, compliance or legal', short:'in risk or compliance', gain:'Six stages you can map your existing policies and controls onto, with plain-language notes on where the EU AI Act and the main standards bite at each one. A learning resource, not legal advice.', start:'the References and the law and standards pages in each Knowledge Edition, then the Module Cards.', recs:['ref','ke','cards'] },
+    { label:'Proposing or building an AI use case', short:'proposing a use case', gain:'You see the questions your idea will be asked before you build it, so the answer comes faster and with fewer surprises.', start:'the Front Door and Risk Size Knowledge Editions, then the L0 Journey Check.', recs:['ke','l0','start'] },
+    { label:'A partner or consultant', short:'a partner or consultant', gain:'A shared structure and a worked synthetic example for conversations with your customers about AI risk. Sharing it unmodified is free; delivering it as a service needs a licence, so talk to us first.', start:'the Journey Deck and the worked examples in the Knowledge Editions, then the Register your interest form below to start a partner conversation.', recs:['deck','ke','next'] },
+    { label:'Building my own skills', short:'building your skills', gain:'A clear model of AI adoption risk you can explain to others, and a way to practise it. Register for the capability profile, then move on to practice.', start:'the Journey Guide, then the Knowledge Editions, then rate yourself on the six questions above.', recs:['guide','ke','l0'] }
+  ];
+  var I = [
+    { id:'start', name:'Start Here', size:'5 pages', what:'A route through the pack: what to open first and in what order.', why:'You don’t have to work out where to begin.' },
+    { id:'guide', name:'Public Journey Guide', size:'17 pages', what:'The whole argument in writing: why AI adoption decisions go wrong, and how the six questions fix it.', why:'Read it once and you can explain the Risk Spine to anyone.' },
+    { id:'deck', name:'Public Journey Deck', size:'58 slides', what:'The same story as slides.', why:'Brief your leadership team or colleagues without building your own deck.' },
+    { id:'sum', name:'Two-page Summary', size:'2 pages', what:'The essentials for a busy reader.', why:'Hand it to a sponsor who has five minutes.' },
+    { id:'spine', name:'One-page Risk Spine model', size:'1 page, PDF and image', what:'The six questions on one page.', why:'Put it on the wall or in a slide; it keeps everyone asking the same questions in the same order.' },
+    { id:'cards', name:'Six Module Cards', size:'1 page each, plus an oversight card', what:'One stage per page: what it covers and what it produces.', why:'A quick reference when a stage comes up in a meeting.' },
+    { id:'ke', name:'Six Knowledge Editions', size:'27–35 slides each', what:'The depth for each stage: the model in one picture, the CatalogueAgent worked example, and where the law and standards sit. The pages shown above come from these.', why:'See how a stage actually works on a realistic case, not just what it is called.' },
+    { id:'ref', name:'Six References', size:'4 pages each', what:'Public summaries of each module’s methods, with plain-language notes on the legal and standards points.', why:'Check how a stage lines up with what your organisation already has to do.' },
+    { id:'l0', name:'L0 Journey Check', size:'2 pages, Word and PDF', what:'A private reflection sheet: where does your organisation stand on each question today?', why:'Turns reading into a first honest look at your own position. Nobody else sees it.' },
+    { id:'next', name:'Where to Go Next', size:'3 pages', what:'The routes onward: learn, apply, build, or not yet.', why:'So you can choose your next step without a sales call.' }
+  ];
+  var T = [
+    { id:'j01o-s1', num:'1', title:'Look inside the six questions', short:'Six questions', sub:'Real pages from the pack, one worked example, and a quick check of your own weakest link.', time:'About 3 minutes', c:'#2E7D7A' },
+    { id:'j01o-s2', num:'2', title:'See what’s in it for you', short:'What you get', sub:'Pick your role and we’ll point you to the right part of the free pack.', time:'About 1 minute', c:'#4A5A9A' },
+    { id:'j01o-s3', num:'3', title:'Download, register or get involved', short:'Where next', sub:'The free pack, a capability profile when you register, or a conversation about trying J01.', time:'Your choice', c:'#B5651D' }
+  ];
+  var st = { picked:0, view:'idea', conf:[null,null,null,null,null,null], aud:-1, all:false, active:'' };
+  function $(r){ return root.querySelector('[data-r="'+r+'"]'); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function weakest(){ var rank={unknown:0,patchy:1,sure:2}, w=-1, low=3; st.conf.forEach(function(c,i){ if(c && rank[c]<low){ low=rank[c]; w=i; } }); return low===2 ? -1 : w; }
+
+  root.querySelectorAll('[data-l]').forEach(function(a){ a.href = LINKS[a.getAttribute('data-l')]; });
+  $('tiles').innerHTML = T.map(function(t){ return '<a class="tile" href="#'+t.id+'"><span class="tn" style="background:'+t.c+'">'+t.num+'</span><span><b>'+esc(t.title)+'</b><span class="s">'+esc(t.sub)+'</span><span class="t">'+esc(t.time)+' →</span></span></a>'; }).join('');
+  $('navlinks').innerHTML = T.map(function(t){ return '<a class="n" href="#'+t.id+'" data-nav="'+t.id+'">'+t.num+' · '+esc(t.short)+'</a>'; }).join('') + '<a class="dl" href="'+LINKS.zip+'">Download</a>';
+  root.querySelectorAll('a[href^="#j01o-"]').forEach(function(a){ a.addEventListener('click', function(e){ var el=document.getElementById(a.getAttribute('href').slice(1)); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); } }); });
+
+  function renderSpine(){
+    var w = weakest();
+    $('stations').innerHTML = S.map(function(s,i){
+      var on=i===st.picked, c=st.conf[i];
+      return '<div class="st'+(on?' on':'')+(i===w?' weak':'')+'" style="'+(on?'background:'+COL[i]:'')+'">'
+        + '<button type="button" class="pick" data-pick="'+i+'" aria-pressed="'+on+'"><span style="display:flex;align-items:center;gap:8px"><span class="badge" style="background:'+COL[i]+';'+(on?'color:'+COL[i]:'')+'">'+s.num+'</span><span class="nm">'+esc(s.name)+'</span></span>'
+        + '<span class="q">'+esc(s.q)+'</span><span class="tag">CatalogueAgent: '+esc(s.tag)+'</span></button>'
+        + '<div class="rate" role="group" aria-label="How sure are you that your organisation could answer: '+esc(s.name)+'">'
+        + '<button type="button" data-rate="'+i+':sure" aria-pressed="'+(c==='sure')+'">Sure</button>'
+        + '<button type="button" data-rate="'+i+':patchy" aria-pressed="'+(c==='patchy')+'">Patchy</button>'
+        + '<button type="button" data-rate="'+i+':unknown" aria-pressed="'+(c==='unknown')+'" aria-label="Don’t know">Unsure</button></div>'
+        + (i===w ? '<span class="wk">Your weakest link</span>' : '') + '</div>';
+    }).join('');
+    var n = st.conf.filter(Boolean).length;
+    $('answered').textContent = n===0 ? 'Rate each question: Sure, Patchy or Unsure.' : n+' of 6 rated';
+    $('weakmsg').innerHTML = w<0 ? '' : '<div class="weakmsg"><p style="font-size:16px;flex:999 1 420px;min-width:0">Your weakest link looks like <strong>'+esc(S[w].name)+'</strong>. The weakest part limits the whole, so that’s where to start: the '+S[w].mod+' Knowledge Edition in the free pack.</p><button type="button" data-goweak="'+w+'">Look inside '+esc(S[w].name)+'</button></div>';
+    var c = S[st.picked], worked = st.view==='worked', src = IMG + c.img + (worked ? '-worked.jpg' : '-concept.jpg');
+    var img = $('shot'); img.src = src; img.alt = worked ? c.workedAlt : c.ideaAlt; $('shotlink').href = src;
+    $('cap').textContent = 'A page from the '+c.mod+' Knowledge Edition in the free pack · Select the page to open it full size.';
+    root.querySelector('[data-a="idea"]').setAttribute('aria-pressed', String(!worked));
+    root.querySelector('[data-a="worked"]').setAttribute('aria-pressed', String(worked));
+    $('detail').innerHTML = '<div style="display:flex;align-items:center;gap:12px"><span class="big" style="background:'+COL[st.picked]+'">'+c.num+'</span><div><div class="k" style="font-size:12px;color:var(--soft)">'+esc(c.module)+'</div><div style="font-size:24px;font-weight:800;color:var(--navy)">'+esc(c.name)+'</div></div></div>'
+      + '<p style="font-size:19px;line-height:1.35;font-weight:600;color:var(--navy)">'+esc(c.q)+'</p>'
+      + '<p style="font-size:15px;color:var(--muted)">'+esc(c.belief)+'</p>'
+      + '<div class="story"><div class="k" style="font-size:12px;color:var(--soft)">CatalogueAgent at this stage</div><p style="font-size:15px;margin-top:6px">'+esc(c.thread)+'</p></div>'
+      + '<p style="font-size:13px;color:var(--soft)">In the free pack: the '+c.mod+' Knowledge Edition, the '+c.card+' Module Card and the '+c.mod+'-R Reference.</p>';
+  }
+  function renderPack(){
+    $('aud').innerHTML = A.map(function(a,i){ return '<button type="button" data-aud="'+i+'" aria-pressed="'+(i===st.aud)+'">'+esc(a.label)+'</button>'; }).join('');
+    var a = st.aud>=0 ? A[st.aud] : null, recs = a ? a.recs : [];
+    $('gain').innerHTML = a ? '<div class="gain"><p style="font-size:17px;font-weight:600;color:var(--navy)">'+esc(a.gain)+'</p><p style="font-size:15px;color:var(--muted)"><strong>Start with:</strong> '+esc(a.start)+'</p></div>' : '';
+    var keys = a ? recs : ['start','guide','spine','ke'];
+    var list = st.all ? I.slice().sort(function(x,y){ return (recs.indexOf(y.id)>=0) - (recs.indexOf(x.id)>=0); }) : I.filter(function(x){ return keys.indexOf(x.id)>=0; });
+    $('items').innerHTML = list.map(function(x){ var r = recs.indexOf(x.id)>=0;
+      return '<div class="item'+(r?' rec':'')+'"><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between"><div style="font-size:17px;font-weight:700;color:var(--navy)">'+esc(x.name)+'</div><span style="font-size:12px;font-weight:700;color:var(--soft)">'+esc(x.size)+'</span></div>'
+        + '<p style="font-size:15px">'+esc(x.what)+' <span style="color:var(--muted)">'+esc(x.why)+'</span></p>'
+        + (r ? '<span class="wk">Start here if you’re '+esc(a.short)+'</span>' : '') + '</div>'; }).join('');
+    var b = root.querySelector('[data-a="all"]'); b.textContent = st.all ? 'Show fewer' : 'Show all ten items'; b.setAttribute('aria-expanded', String(st.all));
+  }
+  root.addEventListener('click', function(e){
+    var t = e.target.closest('button'); if (!t || !root.contains(t)) return;
+    if (t.hasAttribute('data-pick')) { st.picked = +t.getAttribute('data-pick'); renderSpine(); }
+    else if (t.hasAttribute('data-rate')) { var p = t.getAttribute('data-rate').split(':'), i=+p[0]; st.conf[i] = st.conf[i]===p[1] ? null : p[1]; renderSpine(); var nb = root.querySelector('[data-rate="'+p[0]+':'+p[1]+'"]'); if (nb) nb.focus(); }
+    else if (t.hasAttribute('data-goweak')) { st.picked = +t.getAttribute('data-goweak'); st.view='idea'; renderSpine(); root.querySelector('.panel').scrollIntoView({behavior:'smooth',block:'start'}); }
+    else if (t.hasAttribute('data-aud')) { var k=+t.getAttribute('data-aud'); st.aud = st.aud===k ? -1 : k; renderPack(); }
+    else { var a = t.getAttribute('data-a');
+      if (a==='reset') { st.conf=[null,null,null,null,null,null]; renderSpine(); }
+      else if (a==='idea' || a==='worked') { st.view=a; renderSpine(); }
+      else if (a==='all') { st.all=!st.all; renderPack(); } }
+  });
+  try {
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if (en.isIntersecting) { st.active = en.target.id; root.querySelectorAll('[data-nav]').forEach(function(a){ if (a.getAttribute('data-nav')===st.active) a.setAttribute('aria-current','location'); else a.removeAttribute('aria-current'); }); } }); }, { rootMargin:'-45% 0px -50% 0px' });
+      T.forEach(function(t){ var el=document.getElementById(t.id); if (el) io.observe(el); });
+    }
+  } catch(e) {}
+  renderSpine(); renderPack();
+})();
+</script>
