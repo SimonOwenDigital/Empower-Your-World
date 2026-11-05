@@ -1,4 +1,4 @@
-<!-- J01 Make AI Adoption Safe: PUBLIC overview v1.0.1 · EmPOWER Your World
+<!-- J01 Make AI Adoption Safe: PUBLIC overview v1.0.2 · EmPOWER Your World
      Paste this whole block into a Squarespace Code Block (HTML mode).
      If your site header stays fixed at the top while scrolling, set --j01o-top below to its height (for example 80px)
      so the section bar sits underneath it. -->
@@ -50,15 +50,17 @@
 #j01o .st{display:flex;flex-direction:column;gap:10px;padding:14px 12px;border-radius:14px;background:#2A3756;border:2px solid #3A4A6E}
 #j01o .st.on{border-color:#fff}
 #j01o .st.weak:not(.on){border-color:var(--gold)}
-#j01o .pick{display:flex;flex-direction:column;gap:8px;align-items:flex-start;padding:0;border:0;background:transparent;color:#fff;text-align:left;cursor:pointer;min-height:120px;width:100%}
+#j01o .pick{flex:1 1 auto;display:flex;flex-direction:column;gap:8px;align-items:flex-start;padding:0;border:0;background:transparent;color:#fff;text-align:left;cursor:pointer;min-height:120px;width:100%}
 #j01o .badge{display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:24px;border-radius:6px;font-weight:800;font-size:12px;color:#fff}
 #j01o .st.on .badge{background:#fff!important}
 #j01o .pick .nm{font-size:16px;font-weight:700}
 #j01o .pick .q{font-size:13px;line-height:1.4;opacity:.92}
 #j01o .tag{margin-top:auto;font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,.14)}
-#j01o .rate{display:flex;gap:4px}
-#j01o .rate button{flex:1 1 0;min-width:0;min-height:36px;padding:0 4px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
-#j01o .rate button[aria-pressed="true"]{background:#fff;color:var(--navy);border-color:#fff}
+#j01o .rate{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1.5px solid rgba(255,255,255,.5);border-radius:10px;overflow:hidden;margin-top:auto}
+#j01o .rate button{min-width:0;min-height:38px;padding:0 2px;border:0;border-radius:0;border-left:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:12px;font-weight:700;text-align:center;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#j01o .rate button:first-child{border-left:0}
+#j01o .rate button:hover{background:rgba(255,255,255,.12)}
+#j01o .rate button[aria-pressed="true"]{background:#fff;color:var(--navy)}
 #j01o .wk{font-size:12px;font-weight:800;padding:3px 8px;border-radius:6px;background:var(--gold);color:var(--navy);align-self:flex-start}
 #j01o .ghost{min-height:40px;padding:0 16px;border-radius:10px;border:2px solid #CBD3E1;background:transparent;color:#fff;font-size:14px;font-weight:700;cursor:pointer}
 #j01o .weakmsg{background:var(--gold);color:var(--navy);border-radius:12px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
@@ -197,7 +199,7 @@
 </section>
 
 <div class="mcta"><a class="btn" data-l="zip" href="#" style="background:#fff;color:var(--navy)">Download the pack</a><a class="btn" data-l="form" href="#" style="border-color:#fff;color:#fff">Register interest</a></div>
-<footer><div class="w">© 2026 Simon Owen / EmPOWER Your World. A learning resource: not a diagnostic, an assessment or legal, regulatory or professional advice. Wyreld Co. is synthetic. Contact: Simon@EmpowerYour.World · Overview v1.0.1</div></footer>
+<footer><div class="w">© 2026 Simon Owen / EmPOWER Your World. A learning resource: not a diagnostic, an assessment or legal, regulatory or professional advice. Wyreld Co. is synthetic. Contact: Simon@EmpowerYour.World · Overview v1.0.2</div></footer>
 </div>
 
 <script>
@@ -279,12 +281,12 @@
       var on=i===st.picked, c=st.conf[i];
       return '<div class="st'+(on?' on':'')+(i===w?' weak':'')+'" style="'+(on?'background:'+COL[i]:'')+'">'
         + '<button type="button" class="pick" data-pick="'+i+'" aria-pressed="'+on+'"><span style="display:flex;align-items:center;gap:8px"><span class="badge" style="background:'+COL[i]+';'+(on?'color:'+COL[i]:'')+'">'+s.num+'</span><span class="nm">'+esc(s.name)+'</span></span>'
-        + '<span class="q">'+esc(s.q)+'</span><span class="tag">CatalogueAgent: '+esc(s.tag)+'</span></button>'
+        + '<span class="q">'+esc(s.q)+'</span>' + (i===w ? '<span class="wk" style="margin-top:auto">Your weakest link</span>' : '') + '<span class="tag"'+(i===w?' style="margin-top:0"':'')+'>CatalogueAgent: '+esc(s.tag)+'</span></button>'
         + '<div class="rate" role="group" aria-label="How sure are you that your organisation could answer: '+esc(s.name)+'">'
         + '<button type="button" data-rate="'+i+':sure" aria-pressed="'+(c==='sure')+'">Sure</button>'
         + '<button type="button" data-rate="'+i+':patchy" aria-pressed="'+(c==='patchy')+'">Patchy</button>'
         + '<button type="button" data-rate="'+i+':unknown" aria-pressed="'+(c==='unknown')+'" aria-label="Don’t know">Unsure</button></div>'
-        + (i===w ? '<span class="wk">Your weakest link</span>' : '') + '</div>';
+        + '</div>';
     }).join('');
     var n = st.conf.filter(Boolean).length;
     $('answered').textContent = n===0 ? 'Rate each question: Sure, Patchy or Unsure.' : n+' of 6 rated';
