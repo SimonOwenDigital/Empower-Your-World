@@ -7,7 +7,7 @@ This is a one-page, interactive overview of the free J01 PUBLIC pack, built arou
 | File | What it is |
 |---|---|
 | `index.html` | The overview as a standalone page. It loads the images from `img/` next to it. |
-| `squarespace-code-block.html` | The same overview as one block of code to paste into a website (for example a Squarespace Code Block). It loads the images from this repository through the jsDelivr CDN, pinned to the release tag `j01-overview-v1.0`. |
+| `squarespace-code-block.html` | The same overview as one block of code to paste into a website (for example a Squarespace Code Block). It loads the images from this repository through the jsDelivr CDN, pinned to commit `c9ce039`, the commit that added the images. |
 | `img/` | Twelve pages from the six module Knowledge Editions in the PUBLIC pack: one overview page and one CatalogueAgent worked-example page per stage. |
 | `J01_PUBLIC_Overview_v1.0.zip` | All of the above in one download. |
 
@@ -30,7 +30,7 @@ It loads the Inter font from Google Fonts.
 
 ## Updating it
 
-When the Knowledge Editions change, replace the images in `img/`. Then publish under a new tag and update the tag in `squarespace-code-block.html`, so the pinned images change together.
+When the Knowledge Editions change, replace the images in `img/`. Commit them, then update the commit id in the image address in `squarespace-code-block.html` (after `@`) to the new commit, so the pinned images change together.
 
 ## Use terms
 
