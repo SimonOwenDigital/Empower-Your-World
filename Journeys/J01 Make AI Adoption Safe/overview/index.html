@@ -8,7 +8,7 @@
 <style>body{margin:0;background:#F6F7F9}</style>
 </head>
 <body>
-<!-- J01 Make AI Adoption Safe: PUBLIC overview v1.0.2 · EmPOWER Your World
+<!-- J01 Make AI Adoption Safe: PUBLIC overview v1.0.3 · EmPOWER Your World
      Paste this whole block into a Squarespace Code Block (HTML mode).
      If your site header stays fixed at the top while scrolling, set --j01o-top below to its height (for example 80px)
      so the section bar sits underneath it. -->
@@ -78,6 +78,13 @@
 #j01o .panel{background:#fff;color:var(--ink);border-radius:16px;padding:24px;display:flex;flex-wrap:wrap;gap:24px}
 #j01o .pl{flex:999 1 560px;min-width:0;display:flex;flex-direction:column;gap:12px}
 #j01o .pr{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:12px}
+#j01o .pnav{flex:1 1 100%;display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--line)}
+#j01o .pnav .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-right:4px}
+#j01o .pnav button{min-height:36px;padding:0 10px;border-radius:8px;border:2px solid #C7CEDA;background:#fff;color:var(--navy);font-size:13px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+#j01o .pnav button .d{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:20px;border-radius:5px;font-size:11px;font-weight:800;color:#fff}
+#j01o .pnav button[aria-pressed="true"]{color:#fff}
+#j01o .pnav .step{margin-left:auto;display:flex;gap:6px}
+#j01o .pnav .step button{border-color:var(--navy)}
 #j01o .tabs button{min-height:40px;padding:0 16px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;background:#fff;color:var(--navy);border:2px solid #C7CEDA}
 #j01o .tabs button[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
 #j01o .shot{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;line-height:0}
@@ -108,6 +115,12 @@
   #j01o .mcta{display:flex}
   #j01o .nav a.dl{display:none}
   #j01o .panel{padding:16px}
+  #j01o .pnav .nm2{display:none}
+  #j01o .pnav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+  #j01o .pnav .lbl{grid-column:1/-1}
+  #j01o .pnav button{padding:0;justify-content:center}
+  #j01o .pnav .step{grid-column:1/-1;margin-left:0;width:100%}
+  #j01o .pnav .step button{flex:1 1 0;justify-content:center}
   #j01o .pick{min-height:0}
   #j01o .tag{margin-top:4px}
   #j01o .mcta a{flex:1 1 0;padding:0 8px;font-size:14px;white-space:nowrap}
@@ -147,6 +160,7 @@
 </div>
 <div data-r="weakmsg"></div>
 <div class="panel">
+<div class="pnav" role="group" aria-label="Choose a question" data-r="pnav"></div>
 <div class="pl">
 <div class="tabs row" role="group" aria-label="What to show" style="gap:8px">
 <button type="button" data-a="idea">The idea</button>
@@ -209,7 +223,7 @@
 </section>
 
 <div class="mcta"><a class="btn" data-l="zip" href="#" style="background:#fff;color:var(--navy)">Download the pack</a><a class="btn" data-l="form" href="#" style="border-color:#fff;color:#fff">Register interest</a></div>
-<footer><div class="w">© 2026 Simon Owen / EmPOWER Your World. A learning resource: not a diagnostic, an assessment or legal, regulatory or professional advice. Wyreld Co. is synthetic. Contact: Simon@EmpowerYour.World · Overview v1.0.2</div></footer>
+<footer><div class="w">© 2026 Simon Owen / EmPOWER Your World. A learning resource: not a diagnostic, an assessment or legal, regulatory or professional advice. Wyreld Co. is synthetic. Contact: Simon@EmpowerYour.World · Overview v1.0.3</div></footer>
 </div>
 
 <script>
@@ -301,6 +315,8 @@
     var n = st.conf.filter(Boolean).length;
     $('answered').textContent = n===0 ? 'Rate each question: Sure, Patchy or Unsure.' : n+' of 6 rated';
     $('weakmsg').innerHTML = w<0 ? '' : '<div class="weakmsg"><p style="font-size:16px;flex:999 1 420px;min-width:0">Your weakest link looks like <strong>'+esc(S[w].name)+'</strong>. The weakest part limits the whole, so that’s where to start: the '+S[w].mod+' Knowledge Edition in the free pack.</p><button type="button" data-goweak="'+w+'">Look inside '+esc(S[w].name)+'</button></div>';
+    $('pnav').innerHTML = '<span class="lbl">Question</span>' + S.map(function(s,i){ var on=i===st.picked; return '<button type="button" data-pick="'+i+'" aria-pressed="'+on+'" aria-label="'+s.num+' '+esc(s.name)+'" style="'+(on?'background:'+COL[i]+';border-color:'+COL[i]:'')+'"><span class="d" style="background:'+(on?'rgba(255,255,255,.25)':COL[i])+'">'+s.num+'</span><span class="nm2">'+esc(s.name)+'</span></button>'; }).join('')
+      + '<span class="step"><button type="button" data-step="-1"'+(st.picked===0?' disabled style="opacity:.4;cursor:default"':'')+'>\u2190 Previous</button><button type="button" data-step="1"'+(st.picked===S.length-1?' disabled style="opacity:.4;cursor:default"':'')+'>Next \u2192</button></span>';
     var c = S[st.picked], worked = st.view==='worked', src = IMG + c.img + (worked ? '-worked.jpg' : '-concept.jpg');
     var img = $('shot'); img.src = src; img.alt = worked ? c.workedAlt : c.ideaAlt; $('shotlink').href = src;
     $('cap').textContent = 'A page from the '+c.mod+' Knowledge Edition in the free pack · Select the page to open it full size.';
@@ -327,6 +343,7 @@
   root.addEventListener('click', function(e){
     var t = e.target.closest('button'); if (!t || !root.contains(t)) return;
     if (t.hasAttribute('data-pick')) { st.picked = +t.getAttribute('data-pick'); renderSpine(); }
+    else if (t.hasAttribute('data-step')) { st.picked = Math.max(0, Math.min(S.length-1, st.picked + (+t.getAttribute('data-step')))); renderSpine(); var nb2 = root.querySelector('[data-step="'+t.getAttribute('data-step')+'"]'); if (nb2 && !nb2.disabled) nb2.focus(); }
     else if (t.hasAttribute('data-rate')) { var p = t.getAttribute('data-rate').split(':'), i=+p[0]; st.conf[i] = st.conf[i]===p[1] ? null : p[1]; renderSpine(); var nb = root.querySelector('[data-rate="'+p[0]+':'+p[1]+'"]'); if (nb) nb.focus(); }
     else if (t.hasAttribute('data-goweak')) { st.picked = +t.getAttribute('data-goweak'); st.view='idea'; renderSpine(); root.querySelector('.panel').scrollIntoView({behavior:'smooth',block:'start'}); }
     else if (t.hasAttribute('data-aud')) { var k=+t.getAttribute('data-aud'); st.aud = st.aud===k ? -1 : k; renderPack(); }
