@@ -8,6 +8,7 @@ This is a one-page, interactive overview of the free J01 PUBLIC pack, built arou
 |---|---|
 | `index.html` | The overview as a standalone page. It loads the images from `img/` next to it. |
 | `squarespace-code-block.html` | The same overview as one block of code to paste into a website (for example a Squarespace Code Block). It loads the images from this repository through the jsDelivr CDN, pinned to commit `c9ce039`, the commit that added the images. |
+| `squarespace-code-block-journey-page.html` | The edition for the top of the J01 Journey page itself. It has no links back to that page, and its "Register for J01" button jumps to the page's own Register form at `#register`. |
 | `img/` | Twelve pages from the six module Knowledge Editions in the PUBLIC pack: one overview page and one CatalogueAgent worked-example page per stage. |
 | `J01_PUBLIC_Overview_v1.0.zip` | All of the above in one download. |
 
